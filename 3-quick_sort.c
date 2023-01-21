@@ -27,6 +27,7 @@ void q_sort(int *array, int low,  int high, int count)
     temp = array[i];
     array[i] = array[high];
     array[high] = temp;
+    print_array(array, count);
     q_sort(array, low, i - 1, count);
     q_sort(array, i + 1, high, count);
 }
