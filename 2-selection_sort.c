@@ -8,27 +8,26 @@
  */
 void selection_sort(int *array, size_t size)
 {
-    int min, temp, pointer;
-    size_t count, n_count;
+    int temp;
+    size_t count, n_count, min;
 
     if (size < 2)
         return;
-    pointer = 0;
-    for (n_count = 0; n_count < size; n_count++)
+    for (n_count = 0; n_count < size - 1; n_count++)
     {
-        min = array[n_count];
+        min = n_count;
         temp = array[n_count];
-        for (count = n_count; count < size; count++)
+        for (count = n_count + 1; count < size; count++)
         {
-            if (array[count] < min)
-            {
-                min = array[count];
-                pointer = count;
-            }
+            if (array[count] < array[min])
+                min = count;
         }
-        array[n_count] = min;
-        array[pointer] = temp;
-        print_array(array, size);
-        
+        if (min != n_count)
+        {
+            temp = array[min];
+            array[min] = array[n_count];
+            array[n_count] = temp;
+            print_array(array, size);
+        }
     }
 }
