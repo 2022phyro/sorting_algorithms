@@ -11,6 +11,8 @@ void selection_sort(int *array, size_t size)
     int min, temp, pointer;
     size_t count, n_count;
 
+    if (size < 2)
+        return;
     pointer = 0;
     for (n_count = 0; n_count < size; n_count++)
     {
@@ -26,8 +28,7 @@ void selection_sort(int *array, size_t size)
         }
         array[n_count] = min;
         array[pointer] = temp;
-        if (min != temp)
-            print_array(array, size);
+        print_array(array, size);
         
     }
 }

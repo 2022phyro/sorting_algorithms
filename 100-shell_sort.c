@@ -10,6 +10,8 @@ void shell_sort(int *array, size_t size)
     size_t iter, out, i;
     int temp;
 
+    if (size < 2)
+        return;
     iter = 0;
     while (iter < size / 3)
         iter =  (iter * 3) + 1;
