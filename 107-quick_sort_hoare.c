@@ -31,7 +31,7 @@ int part(int *array, int low, int high, int count)
         {
             j--;
         } while (array[j] > pivot);
-        if (j < i)
+        if (i > j)
             return (j);
         temp = array[i];
         array[i] = array[j];

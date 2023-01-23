@@ -38,6 +38,10 @@ void radix_sort(int *array, size_t size);
 void bitonic_sort(int *array, size_t size);
 void quick_sort_hoare(int *array, size_t size);
 
+/*QUICK SORT (LOMUTO'S PARTITION) UTILITIES*/
+int part_l(int *array, int low, int high, int count);
+void q_sort(int *array, int low,  int high, int count);
+
 /* MERGE SORT UTILITIES*/
 void top_down_merge_sort(int *A, int *B, int size);
 void copy_array(int *A, int start, int end, int *B);
