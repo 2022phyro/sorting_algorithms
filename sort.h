@@ -36,6 +36,7 @@ void merge_sort(int *array, size_t size);
 void heap_sort(int *array, size_t size);
 void radix_sort(int *array, size_t size);
 void bitonic_sort(int *array, size_t size);
+void quick_sort_hoare(int *array, size_t size);
 
 /* MERGE SORT UTILITIES*/
 void top_down_merge_sort(int *A, int *B, int size);
@@ -51,6 +52,10 @@ int parent(int n);
 
 /*RADIX SORT UTILITY*/
 int sig_digit(int n, int base);
+
+/*QUICK SORT (HOARE'S PARTITION) UTILITIES*/
+int part(int *array, int low, int high, int count);
+void q_ssort(int *array, int low, int high, int count);
 
 
 #endif /*SORT_H*/
