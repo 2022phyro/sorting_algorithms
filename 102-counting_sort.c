@@ -38,13 +38,12 @@ void counting_sort(int *array, size_t size)
     {
         count[array[i]] += 1;
     }
-    print_array(count, max);
     for (i = 1; (int)i < max; i++)
     {
         count[i] += count[i - 1];
     }
     print_array(count, max);
-    for ( i = 0; i < size; i++)
+    for ( i = size - 1; (int)i >= 0; i--)
     {
         j = array[i];
         count[j] = count[j] - 1;
