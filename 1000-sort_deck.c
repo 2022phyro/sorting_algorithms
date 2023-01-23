@@ -89,6 +89,8 @@ void mysort(deck_node_t **deck, bool req)
  */
 void sort_deck(deck_node_t **deck)
 {
+    if (deck == NULL || *deck == NULL)
+        return;
     mysort(deck, true);
     mysort(deck, false);
 }
