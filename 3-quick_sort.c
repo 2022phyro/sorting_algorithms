@@ -5,17 +5,15 @@
  * @array: The array to be sorted
  * @size: The array size
  */
-void q_sort(int *array, int low,  int high, int count)
+intptr_t part(int *array, int low, int high)
 {
     int pivot, temp, i, j;
 
-    if (low >= high || low < 0)
-        return;
     pivot = array[high];
     i = low - 1;
-    for (j = low; j <= high - 1; j++)
+    for (j = low; j < high; j++)
     {
-        if (array[j] < pivot)
+        if (array[j] <= pivot)
         {
             i++;
             temp = array[j];
@@ -24,9 +22,18 @@ void q_sort(int *array, int low,  int high, int count)
         }
     }
     i++;
-    temp = array[i];
-    array[i] = array[high];
-    array[high] = temp;
+    temp = array[high];
+    array[high] = array[i];
+    array[i] = temp;
+    return i;
+}
+void q_sort(int *array, int low,  int high, int count)
+{
+    int i;
+
+    if (low >= high || low < 0)
+        return;
+    i = part(array, low, high);
     print_array(array, count);
     q_sort(array, low, i - 1, count);
     q_sort(array, i + 1, high, count);
