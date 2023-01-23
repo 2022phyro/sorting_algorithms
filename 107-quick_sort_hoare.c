@@ -12,6 +12,8 @@ void q_ssort(int *array, int low, int high, int count)
 }
 void quick_sort_hoare(int *array, size_t size)
 {
+    if (size < 2)
+        return;
     q_ssort(array, 0, size - 1, size);
 }
 int part(int *array, int low, int high, int count)
